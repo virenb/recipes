@@ -1,0 +1,22 @@
+{
+  "name": "recipes",
+  "version": "1.0.0",
+  "description": "Recipes Node.js project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/virenb/recipes.git"
+  },
+  "author": "virenb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/virenb/recipes/issues"
+  },
+  "homepage": "https://github.com/virenb/recipes#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
