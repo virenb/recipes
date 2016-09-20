@@ -5,7 +5,7 @@ var mock_recipe_results = {
 			"title": "Meat Lasagna",
 			"type": "dinner",
 			"userId": "01010101",
-			"dateAdded": "01/01/2016"
+			"dateAdded": "01/01/2016",
 			"url": "recipes.com/id/219939"
 		},
 			{
@@ -13,7 +13,7 @@ var mock_recipe_results = {
 			"title": "Chocolate Cake",
 			"type": "dessert",
 			"userId": "01189101",
-			"dateAdded": "09/04/2010"
+			"dateAdded": "09/04/2010",
 			"url": "recipes.com/id/123456"
 		},
 			{
@@ -21,7 +21,7 @@ var mock_recipe_results = {
 			"title": "Grilled Cheese",
 			"type": "lunch",
 			"userId": "99990000",
-			"dateAdded": "11/21/2015"
+			"dateAdded": "11/21/2015",
 			"url": "recipes.com/id/009064"
 		},
 			{
@@ -29,22 +29,22 @@ var mock_recipe_results = {
 			"title": "Enchiladas",
 			"type": "dinner",
 			"userId": "71717171",
-			"dateAdded": "01/08/2013"
+			"dateAdded": "01/08/2013",
 			"url": "recipes.com/id/909090"
-		},
+		}
 	]
 };
 
 function getRecipes(callbackFn) {
-    setTimeout(function(){ callbackFn(mock_recipe_results)}, 1000);
+    setTimeout(function(){ callbackFn(mock_recipe_results)}, 100);
 }
 
 // this function stays the same when we connect
 // to real API later
 function displayRecipes(data) {
-    for (index in data.recipes) {
+    for (index in data.recipes_results) {
        $('body').append(
-        '<p>' + data.recipes[index].text + '</p>');
+        '<p>' + data.recipes_results[index].text + '</p>');
     }
 }
 
