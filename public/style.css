@@ -1,2 +1,4 @@
-#ingredient, #submit, #delete {margin-bottom: 10px;}
+#ingredient, #enter, #delete {margin-bottom: 4px;}
 .jumbotron {text-align: center;}
+.btn-primary {background-color: gray;}
+input[type=button] {height: 34px}
