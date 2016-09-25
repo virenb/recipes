@@ -15,30 +15,35 @@
 <body>
     <div class="jumbotron">
         <h1>Recipe Search</h1><br>
-        <p>Making cooking more simple.<br> Enter your ingredients, find recipes.</p>
+        <p>Making cooking more simple.<br> Enter your ingredients, find recipes ideas.</p>
     </div>
 
     <div class="container">
+        <div class="row row-centered">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form id="ing" class="form-inline">
+                    <input type="text" id="ingredient" class="form-control" placeholder="Enter ingredient">
+                    <input type="button" class="btn btn-outline-secondary" id="enter" value="Enter">
+                    <input type="button" class="btn btn-outline-secondary" id="delete" value="Delete">
+                    <ul id="list-group">
 
+                    </ul>
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="row row-centered">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"> <button type="button" id="submit" class="btn btn-outline-secondary">Submit</button></div>
+            <div class="col-md-4"></div>
+        </div>
         <div class="row">
-            <form id="ing">
-                <input type="text" id="ingredient">
-                <input type="button" class="btn btn-outline-secondary" id="enter" value="Enter">
-                <input type="button" class="btn btn-outline-secondary" id="delete" value="Delete">
-                <ul id="list-group">
-                    <li class="list-group-item">potato <input type="checkbox" /> <input type="hidden" name="ingredients[]" value="potato" /></li>
-                    <li class="list-group-item">tomato <input type="checkbox" /> <input type="hidden" name="ingredients[]" value="tomato" /></li>
-                </ul>
-            </form>
+          <div id="results"></div>
         </div>
-
-        <div class="row">
-            <button type="button" id="submit" class="btn btn-outline-secondary">Submit</button>
-        </div>
-        <div class="row" id="results">
-        </div>
-
     </div>
+
+
 
 </body>
 

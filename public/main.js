@@ -50,9 +50,11 @@ $(function() {
     request.done(function(data) {
       // $("#results").text(JSON.stringify(data));
       $.each(data, function (index, value) {
-        $("#results").append(value.title + "<br /><img src='" + value.image + "' alt='' width='100' height='100' />");
+        $("#results").append("<strong>" + value.title + "</strong>" + "<br /><img src='" + value.image + "' alt=' "+ value.title +" ' width='275' height='275' class=\"img-rounded\" data-stuff='" + JSON.stringify(value) + "' /><br /><button type=\"button\" class=\"btn btn-outline-secondary save-button\">Save</button><br /><br /><br />");
       });
     });
+
+    //<img src="..." alt="..." class="img-rounded">
 
     request.fail(function(jqXHR, textStatus) {
       alert("Request failed: " + textStatus);
@@ -62,5 +64,16 @@ $(function() {
     e.preventDefault();
     console.log("Hey");
     searchRecipes();
+  });
+  $("#results").on("click", ".save-button", function () {
+    console.log($(this).prev().prev("img").data("stuff"));
+    $this = $(this);
+    $.post('/recipes', $(this).prev().prev("img").data("stuff"), function (data) {
+      alert(data);
+      if (data.trim() == "OK")
+        $this.html("Saved").prop("disabled", true);
+    });
+    // Send the above object to the favourite databae.
+    
   });
 });
