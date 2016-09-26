@@ -42,7 +42,13 @@ app.get('/recipes', function(req, res) {
                 message: 'Internal Server Error'
             });
         }
-        res.json(recipes);
+        var recipeHtml;
+        recipes.forEach(function(item, index){
+            recipeHtml += ('<br /><span style="font-family: \'Oswald\', sans-serif"><strong>' + item.title + '</strong></span> <br /> <img src="' +item.image+ '" width=\'275\' height=\'275\' class=\"img-rounded\"><br />' );
+        });
+
+        
+        res.send(recipeHtml);
     });
 });
 
