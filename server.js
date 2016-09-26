@@ -62,7 +62,7 @@ app.post('/recipes', function(req, res) {
                 message: 'Internal Server Error'
             });
         }
-        res.status(201).send(recipe);
+        res.status(200).send(recipe);
     });
 });
 
