@@ -2,3 +2,5 @@
 .jumbotron {text-align: center;}
 .btn-primary {background-color: gray;}
 input[type=button] {height: 34px}
+ul  { margin-left: 0;
+    padding-left: 0;}

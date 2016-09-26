@@ -69,7 +69,7 @@ $(function() {
     console.log($(this).prev().prev("img").data("stuff"));
     $this = $(this);
     $.post('/recipes', $(this).prev().prev("img").data("stuff"), function (data) {
-      alert(data);
+      //alert(data);
       if (data.trim() == "OK")
         $this.html("Saved").prop("disabled", true);
     });
