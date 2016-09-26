@@ -1,10 +1,70 @@
 var express = require('express');
+var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var Recipe = require('./models/recipe');
 
+var config = require('./config');
 
 var app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
 app.use(express.static('public'));
 
-app.listen(process.env.PORT || 8080);
+var runServer = function(callback) {
+    mongoose.connect(config.DATABASE_URL, function(err) {
+        if (err && callback) {
+            return callback(err);
+        }
+
+        app.listen(config.PORT, function() {
+            console.log('Listening on localhost:' + config.PORT);
+            if (callback) {
+                callback();
+            }
+        });
+    });
+};
+
+if (require.main === module) {
+    runServer(function(err) {
+        if (err) {
+            console.error(err);
+        }
+    });
+};
+
+app.get('/recipes', function(req, res) {
+    Recipe.find(function(err, recipes) {
+        if (err) {
+            return res.status(500).json({
+                message: 'Internal Server Error'
+            });
+        }
+        res.json(recipes);
+    });
+});
+
+app.post('/recipes', function(req, res) {
+    Recipe.create({
+        title: req.body.title,
+        image: req.body.image
+    }, function(err, recipe) {
+        if (err) {
+            return res.status(500).json({
+                message: 'Internal Server Error'
+            });
+        }
+        res.status(201).send(recipe);
+    });
+});
+
+app.use('*', function(req, res) {
+    res.status(404).json({
+        message: 'Not Found'
+    });
+});
 
 exports.app = app;
-module.exports = app;
+exports.runServer = runServer;

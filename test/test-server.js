@@ -20,4 +20,30 @@ describe('server', function() {
             })
 
     });
+
+    it('should return status 200', function(done) {
+        chai.request(server)
+        	.get('/recipe-results.html')
+            .end(function(err, res) {
+                should.equal(err, null);
+                res.should.have.status(200);
+                res.should.be.html;
+                res.body.should.be.a('object');
+                done();
+            })
+
+    });
+
+    it('should return status 200', function(done) {
+        chai.request(server)
+        	.get('/fav-recipes.html')
+            .end(function(err, res) {
+                should.equal(err, null);
+                res.should.have.status(200);
+                res.should.be.html;
+                done();
+            })
+
+    });
+
 });
