@@ -18,8 +18,8 @@ var runServer = function(callback) {
             return callback(err);
         }
 
-        app.listen(process.env.PORT || 3000, function(){
-          console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+        app.listen(config.PORT, function() {
+            console.log('Listening on localhost:' + config.PORT);
             if (callback) {
                 callback();
             }
