@@ -1,6 +1,32 @@
-#ingredient, #enter, #delete {margin-bottom: 4px;}
-.jumbotron {text-align: center;}
-.btn-primary {background-color: gray;}
-input[type=button] {height: 34px}
-ul  { margin-left: 0;
-    padding-left: 0;}
+#ingredient,
+#enter,
+#delete {
+    margin-bottom: 4px;
+}
+.jumbotron {
+    text-align: center;
+}
+.btn-primary {
+    background-color: gray;
+}
+input[type=button] {
+    height: 34px
+}
+ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+.btn-lg {
+    margin-top: 15px;
+    margin-bottom: -20px;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+a:hover,
+a:visited {
+    font-weight: 400;
+    color: #000;
+    text-decoration: none;
+}
