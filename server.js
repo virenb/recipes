@@ -18,8 +18,8 @@ var runServer = function(callback) {
             return callback(err);
         }
 
-        app.listen(port, function() {
-            console.log('Listening on localhost:' + port);
+        app.listen(config.PORT, function() {
+            console.log('Listening on localhost:' + config.PORT);
             if (callback) {
                 callback();
             }
