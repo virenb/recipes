@@ -37,7 +37,7 @@ if (require.main === module) {
     });
 };
 
-app.get('/recipes/saved', function(req, res) {
+app.get('/saved', function(req, res) {
     Recipe.find(function(err, recipes) {
         if (err) {
             return res.status(500).json({
