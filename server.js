@@ -11,10 +11,10 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
 app.use(express.static('public'));
-app.listen(config.PORT);
+//app.listen(config.PORT);
 
 var runServer = function(callback) {
-    mongoose.connect(config.PORT, function(err) {
+    mongoose.connect(config.DATABASE_URL, function(err) {
         if (err && callback) {
             return callback(err);
         }

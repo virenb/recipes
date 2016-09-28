@@ -73,7 +73,7 @@ $(function() {
       if (data.trim() == "OK")
         $this.html("Saved").prop("disabled", true);
     });
-    // Send the above object to the favourite databae.
+    
     
   });
 });
