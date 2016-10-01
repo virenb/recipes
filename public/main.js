@@ -1,9 +1,10 @@
 $(function() {
 
   $(".submitEvent").on("click keyup", function (e) {
+    var ingred;
       if (e.type == "click" || e.keyCode == 13)
         //e.preventDefault();
-        var ingred = $('#ingredient').val();
+         ingred = $('#ingredient').val();
         $('#list-group').append('<li class="list-group-item">' + ingred + ' <input type="checkbox" /> <input type="hidden" name="ingredients[]" value="' + ingred + '" /></li>');
         $('#ingredient').val('');
         var data = $("#ing").serializeArray();
@@ -14,7 +15,7 @@ $(function() {
         });
         var joinMap = ingredientsMap.join(',');
 
-};
+});
 
 //   $('#enter').on('click', function(e) {
 //     e.preventDefault();
