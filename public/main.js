@@ -1,39 +1,36 @@
 $(function() {
 
+  $(".submitEvent").on("click keyup", function (e) {
+      if (e.type == "click" || e.keyCode == 27)
+        e.preventDefault();
+        var ingred = $('#ingredient').val();
+        $('#list-group').append('<li class="list-group-item">' + ingred + ' <input type="checkbox" /> <input type="hidden" name="ingredients[]" value="' + ingred + '" /></li>');
+        $('#ingredient').val('');
+        var data = $("#ing").serializeArray();
+        var dataString = JSON.stringify(data);
+        //console.log(dataString);
+        var ingredientsMap = $.map(data, function(u) {
+          return u.value;
+        });
+        var joinMap = ingredientsMap.join(',');
 
-  var callback = function() {var ingred = $('#ingredient').val();
-  $('#list-group').append('<li class="list-group-item">' + ingred + ' <input type="checkbox" /> <input type="hidden" name="ingredients[]" value="' + ingred + '" /></li>');
-  $('#ingredient').val('');
-  var data = $("#ing").serializeArray();
-  var dataString = JSON.stringify(data);
-  //console.log(dataString);
-  var ingredientsMap = $.map(data, function(u) {
-    return u.value;
-  });
-  var joinMap = ingredientsMap.join(',');};
+};
 
-  $("#ingredient").keypress(function() {
-      if (event.which == 13) callback();
-  });
-
-  $('#enter').click(callback);
-
-
-  // $('#enter').on('click', function(e) {
-  //   e.preventDefault();
-  //   var ingred = $('#ingredient').val();
-  //   $('#list-group').append('<li class="list-group-item">' + ingred + ' <input type="checkbox" /> <input type="hidden" name="ingredients[]" value="' + ingred + '" /></li>');
-  //   $('#ingredient').val('');
-  //   var data = $("#ing").serializeArray();
-  //   var dataString = JSON.stringify(data);
-  //   //console.log(dataString);
-  //   var ingredientsMap = $.map(data, function(u) {
-  //     return u.value;
-  //   });
-  //   var joinMap = ingredientsMap.join(',');
-  //   //console.log(joinMap);
-  //
-  // });
+//   $('#enter').on('click', function(e) {
+//     e.preventDefault();
+//     var ingred = $('#ingredient').val();
+//     $('#list-group').append('<li class="list-group-item">' + ingred + ' <input type="checkbox" /> <input type="hidden" name="ingredients[]" value="' + ingred + '" /></li>');
+//     $('#ingredient').val('');
+//     var data = $("#ing").serializeArray();
+//     var dataString = JSON.stringify(data);
+//     //console.log(dataString);
+//     var ingredientsMap = $.map(data, function(u) {
+//       return u.value;
+//     });
+//     var joinMap = ingredientsMap.join(',');
+//     //console.log(joinMap);
+//
+//   });
 //
 //   $('#ingredient').keypress(function(event){
 //     var ingred = $('#ingredient').val();
