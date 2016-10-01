@@ -1,6 +1,6 @@
 $(function() {
 
-  $(".submitEvent").on("click keyup", function (e) {
+  $(".submitEvent").on("click enter", function (e) {
     var ingred;
       if (e.type == "click" || e.keyCode == 13)
         //e.preventDefault();
