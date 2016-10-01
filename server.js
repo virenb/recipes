@@ -9,7 +9,7 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
-})); 
+}));
 app.use(express.static('public'));
 //app.listen(config.PORT);
 
@@ -44,12 +44,12 @@ app.get('/recipes', function(req, res) {
                 message: 'Internal Server Error'
             });
         }
-        var recipeHtml;
-        recipes.forEach(function(item, index){
-            recipeHtml += ('<br /><span style="font-family: \'Oswald\', sans-serif"><strong>' + item.title + '</strong></span> <br /> <img src="' +item.image+ '" width=\'275\' height=\'275\' class=\"img-rounded\"><br />' );
+        var recipeHtml = '<h1 style="font-family: \'Oswald\', sans-serif">My Saved Recipes</h1>';
+        recipes.forEach(function(item, index) {
+            recipeHtml += ('<br /><span style="font-family: \'Oswald\', sans-serif"><strong>' + item.title + '</strong></span> <br /> <img src="' + item.image + '" width=\'275\' height=\'275\' class=\"img-rounded\"><br /><form action="/delete" method="post"><input type="hidden" name="id" value="' + item.id + '" /><input type="submit" style="padding: 5px 15px;background: #ccc; border-radius: 5px; cursor: pointer; border: 0 none" value="Delete" /></form><br /><br />');
         });
 
-        
+
         res.send(recipeHtml);
     });
 });

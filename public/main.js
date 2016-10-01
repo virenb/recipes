@@ -62,7 +62,6 @@ $(function() {
   };
   $('#submit').on('click', function(e) {
     e.preventDefault();
-    console.log("Hey");
     searchRecipes();
   });
   $("#results").on("click", ".save-button", function () {
@@ -73,7 +72,7 @@ $(function() {
       if (data.trim() == "OK")
         $this.html("Saved").prop("disabled", true);
     });
-    
-    
+
+
   });
 });
