@@ -68,6 +68,16 @@ app.post('/recipes', function(req, res) {
     });
 });
 
+app.post("/delete", function(req, res) {
+    Recipe.find({
+        _id: req.body.id
+    }).remove().exec();
+    res.writeHead(302, {
+        'Location': '/recipes'
+    });
+    res.end();
+});
+
 app.use('*', function(req, res) {
     res.status(404).json({
         message: 'Not Found'
