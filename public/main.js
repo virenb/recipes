@@ -1,7 +1,7 @@
 $(function() {
 
   $(".submitEvent").on("click keyup", function (e) {
-      if (e.type == "click" || e.keyCode == 27)
+      if (e.type == "click" || e.keyCode == 13)
         e.preventDefault();
         var ingred = $('#ingredient').val();
         $('#list-group').append('<li class="list-group-item">' + ingred + ' <input type="checkbox" /> <input type="hidden" name="ingredients[]" value="' + ingred + '" /></li>');
