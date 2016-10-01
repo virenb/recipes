@@ -21,7 +21,7 @@ $(function() {
     var ingred = $('#ingredient').val();
   if(event.keyCode == 13){
     $('#list-group').append('<li class="list-group-item">' + ingred + ' <input type="checkbox" /> <input type="hidden" name="ingredients[]" value="' + ingred + '" /></li>');
-    $('#ingredient').val('');
+    //$('#ingredient').val('');
     var data = $("#ing").serializeArray();
     var dataString = JSON.stringify(data);
     //console.log(dataString);
