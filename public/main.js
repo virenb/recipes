@@ -18,7 +18,6 @@ $(function() {
   });
 
   $('#ingredient').keypress(function(event){
-    event.preventDefault();
     var ingred = $('#ingredient').val();
   if(event.keyCode == 13){
     $('#list-group').append('<li class="list-group-item">' + ingred + ' <input type="checkbox" /> <input type="hidden" name="ingredients[]" value="' + ingred + '" /></li>');
