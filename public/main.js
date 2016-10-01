@@ -18,8 +18,18 @@ $(function() {
   });
 
   $('#ingredient').keypress(function(event){
+    event.preventDefault();
+    var ingred = $('#ingredient').val();
   if(event.keyCode == 13){
-    $('#enter').click();
+    $('#list-group').append('<li class="list-group-item">' + ingred + ' <input type="checkbox" /> <input type="hidden" name="ingredients[]" value="' + ingred + '" /></li>');
+    $('#ingredient').val('');
+    var data = $("#ing").serializeArray();
+    var dataString = JSON.stringify(data);
+    //console.log(dataString);
+    var ingredientsMap = $.map(data, function(u) {
+      return u.value;
+    });
+    var joinMap = ingredientsMap.join(',');
   }
 });
 
