@@ -17,6 +17,12 @@ $(function() {
 
   });
 
+  $('#ingredient').keypress(function(event){
+  if(event.keyCode == 13){
+    $('#enter').click();
+  }
+});
+
   $("#delete").on("click", function() {
     $("input:checked").closest(".list-group-item").remove();
     var data = $("#ing").serializeArray();
