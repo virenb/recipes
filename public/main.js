@@ -1,12 +1,7 @@
 $(function() {
 
-  $('.submitEvent').bind('keypress', function(e) {
-             if(e.keyCode==13){
-                  $('.submitEvent').trigger('click');
-              }
-         });
 
-  $('.submitEvent').on('click', function(e) {
+  $('#enter').on('click', function(e) {
     e.preventDefault();
     var ingred = $('#ingredient').val();
     $('#list-group').append('<li class="list-group-item">' + ingred + ' <input type="checkbox" /> <input type="hidden" name="ingredients[]" value="' + ingred + '" /></li>');
@@ -27,13 +22,13 @@ $(function() {
   if(event.keyCode == 13){
     $('#list-group').append('<li class="list-group-item">' + ingred + ' <input type="checkbox" /> <input type="hidden" name="ingredients[]" value="' + ingred + '" /></li>');
     //$('#ingredient').val('');
-    var data = $("#ing").serializeArray();
-    var dataString = JSON.stringify(data);
-    //console.log(dataString);
-    var ingredientsMap = $.map(data, function(u) {
-      return u.value;
-    });
-    var joinMap = ingredientsMap.join(',');
+    // var data = $("#ing").serializeArray();
+    // var dataString = JSON.stringify(data);
+    // //console.log(dataString);
+    // var ingredientsMap = $.map(data, function(u) {
+    //   return u.value;
+    // });
+    // var joinMap = ingredientsMap.join(',');
   }
 });
 
