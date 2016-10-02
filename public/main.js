@@ -1,7 +1,12 @@
 $(function() {
 
+  $('.submitEvent').bind('keypress', function(e) {
+             if(e.keyCode==13){
+                  $('.submitEvent').trigger('click');
+              }
+         });
 
-  $('#enter').on('click', function(e) {
+  $('.submitEvent').on('click', function(e) {
     e.preventDefault();
     var ingred = $('#ingredient').val();
     $('#list-group').append('<li class="list-group-item">' + ingred + ' <input type="checkbox" /> <input type="hidden" name="ingredients[]" value="' + ingred + '" /></li>');
