@@ -6,8 +6,10 @@ Link to the project can be found here - https://fast-hamlet-85700.herokuapp.com/
 This Node.js Capstone project is a web application which allows a user to search for recipe ideas based on ingredient he or she inputs into the search. The Food API used was from [Spoonacular](https://spoonacular.com/) (thank you!).
 
 ### Usage
-https://i.imgur.com/u9QnkZr.png
-https://i.imgur.com/Sr5hdHs.png
+![Alt text](https://i.imgur.com/u9QnkZr.png "Home Screen")
+![Alt text](https://i.imgur.com/Sr5hdHs.png "Saved Results Screen")
+
+
 The below two screenshots represent the two pages of this web application. The user can enter ingredients he or she has and wants to base their meal around in the first screen. Once at least one ingredient is enter, the results are displayed before with the recipe name and an image of the meal. There are save buttons under each recipe if the user would like to 'favorite' or save the recipe idea for future use. The second page of the web application is where the user can find all the ingredients he or she has saved.
 
 ### Technologies Used
